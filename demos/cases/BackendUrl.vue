@@ -3,7 +3,7 @@ import { Tasklist } from "../../src/index.js";
 import { RestURL } from "@svar-ui/lib-data-provider";
 
 const url = new RestURL(
-	"https://-backend.svar.devtasklist/tasks/1"
+	"https://tasklist-backend.svar.dev/tasks/1"
 );
 const value = url.get();
 </script>

@@ -5,7 +5,7 @@ import { Segmented } from "@svar-ui/vue-core";
 import { RestURL } from "@svar-ui/lib-data-provider";
 
 const url = new RestURL(
-	"https://-backend.svar.devtasklist/tasks"
+	"https://tasklist-backend.svar.dev/tasks"
 );
 
 const id = ref(1);
