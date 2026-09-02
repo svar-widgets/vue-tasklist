@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import Demos from './common/Index.vue'
 
 import { Globals, Button, Segmented, Locale, Willow, WillowDark } from '@svar-ui/vue-core';
-import "@wx/vue-core/style.css";
+import "@svar/vue-core/style.css";
 
 import { router } from "./common/helpers.js";
 
