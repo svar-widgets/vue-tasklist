@@ -22,6 +22,7 @@ const _ = locale.getGroup('tasklist');
 const textarea = ref(null);
 
 function adjustHeight() {
+  if (!textarea.value) return;
   textarea.value.style.height = textarea.value.scrollHeight + 2 + 'px';
 }
 
@@ -72,7 +73,7 @@ function handleEditClick() {
         <div class="wx-icon-add"><i class="wxi-plus"></i></div>
       </template>
       <template v-else>
-        <Checkbox :onchange="handleStatus" :value="task.status" />
+        <Checkbox :onchange="handleStatus" :value="!!task.status" />
       </template>
     </div>
 
@@ -88,7 +89,7 @@ function handleEditClick() {
         ></textarea>
       </template>
       <template v-else>
-        <div class="wx-text-wrapper" @dblclick="() => onedit(task.id)">
+        <div class="wx-text-wrapper" @dblclick="() => onedit?.(task.id)">
           <span class="wx-text">{{ task.content }}</span>
         </div>
       </template>
@@ -102,7 +103,7 @@ function handleEditClick() {
 
     <div class="wx-icon-close">
       <template v-if="!readonly && edit !== task.id">
-        <i class="wxi-close" @click="() => onremove(task.id)"></i>
+        <i class="wxi-close" @click="() => onremove?.(task.id)"></i>
       </template>
     </div>
   </div>

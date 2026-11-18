@@ -23,10 +23,10 @@ const lang = ref("en");
 		<Segmented :options="langs" v-model:value="lang" />
 	</div>
 	<div style="margin: 20px; max-width: 700px; margin-top: 40px">
-		<Locale v-if="lang === 'de'" :words="{ ...de, deCore }">
+		<Locale v-if="lang === 'de'" :words="{ ...de, ...deCore }">
 			<Tasklist :value="data" />
 		</Locale>
-		<Locale v-else-if="lang === 'cn'" :words="{ ...cn, cnCore }">
+		<Locale v-else-if="lang === 'cn'" :words="{ ...cn, ...cnCore }">
 			<Tasklist :value="data" />
 		</Locale>
 		<Tasklist v-else :value="data" />

@@ -38,10 +38,8 @@ watch(
 	{ immediate: true }
 );
 
-const handleOnchange = e => {
-	e.originalValue = props.value;
-	return props.onchange && props.onchange(e);
-};
+const handleOnchange = e =>
+	props.onchange?.({ ...e, originalValue: props.value });
 </script>
 
 <template>
